@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#6743cb">
+<meta name="theme-color" content="#18574f">
+<link rel="icon" href="lotus-icon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<title>Défi Quiz – À toi de jouer !</title>
+<title>LOTUS Quiz · Jouer et apprendre</title>
 <style>
 :root{--purple:#6743cb;--purple2:#8b6bea;--ink:#27233a;--muted:#77738a;--bg:#f6f3ff;--card:#fff;--green:#16865b;--line:#e9e4f5}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
@@ -29,10 +30,13 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:12px}
 @media(max-width:390px){.grid{gap:5px}.level{font-size:13px;padding:10px 2px}.options{grid-template-columns:1fr}}
 header{background:radial-gradient(circle at 90% 10%,#d43fe0 0,transparent 40%),linear-gradient(135deg,#31227e,#7138d8 60%,#a650e6);padding-top:30px;padding-bottom:34px}body{background:linear-gradient(180deg,#eee7ff,#f7f3ff 420px)}.card{box-shadow:0 12px 32px #39206b18;border:1px solid #e7ddff}.brand{text-shadow:0 3px 10px #23105a80}.universe-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.universe-grid>div{border-radius:16px;padding:18px 10px;text-align:center;background:linear-gradient(135deg,#ede4ff,#f9edff);border:2px solid #e4d5ff;font-size:22px}.universe-grid b{display:block;font-size:13px;margin-top:7px;color:#542db1}.universe-grid>div:nth-child(2){background:#fff0db;border-color:#ffe0aa}.universe-grid>div:nth-child(3){background:#e4f7ff;border-color:#bceaff}.universe-grid>div:nth-child(4){background:#ffe5f5;border-color:#ffc5e9}.level.open{background:linear-gradient(135deg,#7147df,#ab4be7)}button:not(.secondary){box-shadow:0 4px 10px #6338ba20}button:focus-visible{outline:3px solid #ffb900;outline-offset:2px}#questionText{line-height:1.4}@media(max-width:390px){.universe-grid>div{padding:12px 5px}}
 .difficulty-guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.difficulty-guide>div{padding:12px;border-radius:14px;background:#f2edff;border:1px solid #dfd2ff}.difficulty-guide strong{display:block;color:#5430aa}.difficulty-guide small{display:block;margin-top:5px}.challenge-row{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:12px 0 0;flex-wrap:wrap}.challenge-time{font-weight:850;color:#ad2762}.challenge-time.urgent{color:#b3261e}.difficulty-pill{background:#fff0d1;color:#7a4600}@media(max-width:390px){.difficulty-guide{grid-template-columns:1fr 1fr}}
+
+:root{--purple:#18574f;--purple2:#28776a;--ink:#233b35;--muted:#5b655e;--bg:#fcf8ef;--line:#dddccf}
+body{background:linear-gradient(180deg,#f2e6ce,#fcfaf5 420px)}header{background:radial-gradient(circle at 90% 10%,#a7834240,transparent 45%),linear-gradient(125deg,#123f39,#25675b);padding-top:24px}.brand{font-size:23px;text-shadow:none}.tag{font-size:14px;line-height:1.6}.card{border-color:#e9dfcd;box-shadow:0 9px 28px #4b44250c}.stat,#questionText{background:#f6f1e5!important}.avatar{background:#f3ecd9;border-color:#dec995}.progress{background:#ece6d7}.progress span{background:linear-gradient(90deg,#28776a,#b08d4f)}button.secondary,.level,.options button,.pill,.difficulty-guide>div{background:#edf2e9;color:#18574f}.difficulty-guide>div{border-color:#d4dece}.difficulty-guide strong{color:#18574f}.level.open{background:linear-gradient(135deg,#18574f,#28776a)}.options button.correct{background:#dff4e8;color:#126c46}.options button.wrong{background:#ffebeb;color:#a52c36}.feedback{background:#f5f0e3}.challenge-time{color:#18574f}button:focus-visible{outline:3px solid #9a671a}.collection-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.collection{display:flex;flex-direction:column;gap:8px;text-align:left;padding:17px 14px;background:#edf2e9!important;color:#174d43;border:1px solid #cfdcc9;min-height:98px;box-shadow:none!important}.collection strong{font-size:16px}.collection span{font-size:12px;font-weight:500;color:#475d51}.section-label{color:#80622f;letter-spacing:.09em;text-transform:uppercase;font-size:11px;font-weight:850;margin-bottom:8px}.learning-tabs{display:flex;gap:9px;margin:15px 0}.learning-tabs button{flex:1}.learning-tabs button[aria-pressed=true]{background:#18574f;color:#fff;border:2px solid #18574f}.learning-tabs button[aria-pressed=false]{background:#f8f4e9;color:#18574f;border:2px solid #d2decc}.learning-question{background:#f5f0e3;border-radius:15px;padding:22px 16px;font-size:21px;line-height:1.5;font-weight:750}.learning-note{line-height:1.7;color:#264d3d;margin-top:16px}#learningPanel{scroll-margin-top:15px}button{min-height:44px}.options button{overflow-wrap:anywhere}.row{flex-wrap:wrap}@media(max-width:420px){.collection-grid{grid-template-columns:1fr}.brand{font-size:21px}.brand span{display:block;margin-top:8px;font-size:13px}.options{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand">🧠 DÉFI QUIZ <span style="color:#ffe46b">· À TOI DE JOUER !</span></div><div class="tag">2 000 défis pour faire travailler tes méninges · Gratuit · Sans publicité</div></div></header>
+<header><div class="wrap"><div class="brand"><img src="lotus-icon.svg" alt="" width="48" height="48" style="vertical-align:middle;margin-right:10px">LOTUS QUIZ <span style="color:#f3d691">· JOUE ET APPRENDS</span></div><div class="tag">2 000 niveaux + 80 nouvelles questions et fiches · Gratuit · Sans publicité</div></div></header>
 <div class="wrap"><main>
 <section id="home" class="card">
  <div class="row">
@@ -48,9 +52,12 @@ header{background:radial-gradient(circle at 90% 10%,#d43fe0 0,transparent 40%),l
  <div style="height:12px"></div><div class="progress"><span id="progressHome"></span></div>
  <p class="muted" style="font-size:12px;margin:7px 0 0">Ta progression est enregistrée dans ce navigateur. Pense à créer une sauvegarde avant de changer de site ou d’appareil.</p>
 </section>
-<section class="card"><h2>🌈 Choisis ton univers</h2><div class="universe-grid"><div>🌍 <b>Culture générale</b></div><div>🧩 <b>Logique</b></div><div>🧠 <b>Mémoire</b></div><div>🎶 <b>Musique du monde</b></div></div><p class="muted" style="font-size:12px;margin:12px 0 0">Les univers se mélangent au fil des niveaux pour te faire découvrir de nouveaux défis.</p></section>
+<section id="learningCatalogue" class="card"><p class="section-label">Découvrir à son rythme</p><h2>🌸 De nouveaux univers</h2><p class="muted">Choisis une catégorie sans débloquer de niveau. 8 questions par catégorie, en quiz ou en fiches.</p><div id="banks-culture" class="collection-grid"></div></section>
+<section class="card"><p class="section-label">Apprendre et comprendre</p><h2>📚 Révisions scolaires</h2><p class="muted">Une première sélection du primaire et du secondaire : 4 fiches et 4 exercices par matière. Choisis les notions qui correspondent à ton cours.</p><div id="banks-scolaire" class="collection-grid"></div></section>
+<section class="card"><p class="section-label">Consolider ses bases</p><h2>🎓 Révisions universitaires</h2><p class="muted">Notions d’introduction : 4 fiches et 4 exercices par matière. Ce premier contenu ne couvre pas un programme universitaire complet et ne remplace pas tes cours.</p><div id="banks-universitaire" class="collection-grid"></div><p id="learningStatus" class="muted" role="status"></p></section>
+<section id="learningPanel" class="card hidden" aria-labelledby="learningTitle"><div class="row between"><h2 id="learningTitle"></h2><button id="learningClose" class="secondary" type="button">Fermer</button></div><p id="learningCounter" class="muted"></p><div class="learning-tabs" role="group" aria-label="Mode de révision"><button id="learningQuiz" type="button" aria-pressed="true">M’entraîner</button><button id="learningCards" type="button" aria-pressed="false">Lire les fiches</button></div><p class="muted" style="font-size:13px">Sans chronomètre. En quiz, une erreur te laisse réessayer sans dévoiler la réponse. Les fiches expliquent la notion.</p><div id="learningQuestion" class="learning-question"></div><div id="learningOptions" class="options" style="margin-top:14px"></div><button id="learningReveal" class="secondary" style="margin-top:14px" type="button" hidden>Lire la fiche</button><p id="learningNote" class="learning-note"></p><p id="learningFeedback" class="feedback" role="status" aria-live="polite"></p><button id="learningNext" type="button">Suivant →</button><p class="muted" style="font-size:12px;margin:14px 0 0">Tes révisions sont enregistrées dans ce navigateur, séparément des points du parcours de 2 000 niveaux.</p></section>
 <section class="card"><h2>🔥 Des défis de plus en plus corsés !</h2><div class="difficulty-guide"><div><strong>🌱 Facile · 1–300</strong><small>Sans chronomètre · 10 points</small></div><div><strong>⚡ Intermédiaire · 301–900</strong><small>Sans chronomètre · 15 points</small></div><div><strong>🔥 Difficile · 901–1500</strong><small>Sans chronomètre · 20 points</small></div><div><strong>👑 Expert · 1501–2000</strong><small>Sans chronomètre · 30 points</small></div></div><p class="muted" style="font-size:12px;margin:10px 0 0">Aucun chronomètre : prends tout ton temps pour répondre. Les questions restent celles de ton jeu ; leur difficulté n’a pas encore été rééquilibrée individuellement.</p></section>
-<section class="card"><div class="row between"><h2>🎯 Les 2 000 niveaux</h2><span class="pill">plusieurs univers</span></div><div id="levels" class="grid"></div></section>
+<section class="card"><div class="row between"><h2>🎯 Les 2 000 niveaux</h2><span class="pill">plusieurs univers</span></div><div class="nav" style="margin-bottom:12px"><button id="resumeLevel" type="button">Reprendre ma partie</button><button id="previousLevels" class="secondary" type="button">← Page précédente</button><button id="nextLevels" class="secondary" type="button">Page suivante →</button></div><p id="levelsPage" class="muted" role="status"></p><div id="levels" class="grid"></div></section>
 <section class="card"><h2>🏆 Mes résultats</h2><p class="muted" style="font-size:13px">Ton parcours personnel, sans classement public.</p><div id="ranking"></div></section>
 <section class="card"><h2>💾 Sauvegarder ma partie</h2><p class="muted" style="font-size:13px">Télécharge une sauvegarde pour retrouver tes niveaux, même si tu changes de site ou de navigateur. Garde ce fichier privé : il peut contenir ton pseudo et ta photo.</p><div class="nav"><button id="exportSave" type="button">Exporter ma sauvegarde</button><button id="importSave" class="secondary" type="button">Importer une sauvegarde</button></div><input id="importFile" type="file" accept="application/json,.json" class="hidden"><p id="saveMessage" class="muted" role="status" style="font-size:13px;margin:10px 0 0"></p></section>
 <section id="game" class="card hidden">
@@ -58,11 +65,11 @@ header{background:radial-gradient(circle at 90% 10%,#d43fe0 0,transparent 40%),l
  <div class="challenge-row"><span class="pill difficulty-pill" id="difficultyLabel">🌱 Facile</span><span id="challengeTime" class="challenge-time" aria-live="off"></span></div><div style="height:12px"></div><div class="progress"><span id="gameProgress"></span></div>
  <div style="height:16px"></div><h2 id="questionTitle">Défi</h2><div id="questionText" style="font-size:23px;font-weight:850;text-align:center;padding:20px 8px;background:#f7f4ff;border-radius:16px;white-space:pre-line"></div>
  <p class="muted" style="text-align:center;margin:12px 0">Choisis la bonne réponse :</p><div id="options" class="options"></div>
- <div id="feedback" class="feedback hidden"></div>
+ <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
  <div style="height:12px"></div><div class="row between"><button class="secondary" id="backHome">Accueil</button><button id="next" disabled>Continuer →</button></div>
 </section>
-<section class="card"><h2>ℹ️ À propos du jeu</h2><p class="muted" style="font-size:13px;line-height:1.5;margin-bottom:0">2 000 défis de culture générale, logique, mémoire et musique du monde répartis en plusieurs univers. Gratuit, sans publicité et jouable en solo. Le profil et les résultats restent sur ton appareil ; aucun classement en ligne n’est utilisé.</p></section>
-</main><footer>DÉFI QUIZ · Version de test 0.6</footer></div>
+<section class="card"><h2>ℹ️ À propos du jeu</h2><p class="muted" style="font-size:13px;line-height:1.5;margin-bottom:0">2 000 défis de culture générale, logique, mémoire et musique du monde, plus 80 questions et fiches : cinéma, acteurs et actrices, gastronomie, animaux et révisions scolaires et universitaires. Gratuit, sans publicité et jouable en solo. Le profil et les résultats restent sur ton appareil ; aucun classement en ligne n’est utilisé.</p></section>
+</main><footer>LOTUS QUIZ · Version 0.8</footer></div>
 <script>
 const raw = [
 ["Chiffres", "Suite numérique", "2, 4, 6, 8, ?", ["9","10","12","14"],1,"On ajoute 2 à chaque fois."],
@@ -181,7 +188,14 @@ raw[70]=["Mémoire","Attention","Quel nombre manque : 8, 3, 8, 5, 8, ?",["3","5"
 const TOTAL=2000;
 const questions=raw.map((r,i)=>({id:i+1,category:r[0],type:r[1],q:r[2],opts:r[3],correct:r[4],why:r[5]}));
 let state={pseudo:"",photo:"",score:0,stars:0,unlocked:1,done:[],scores:[]};
-try{const old=JSON.parse(localStorage.getItem("atoj_v1")||"null");if(old)state={...state,...old}}catch(e){}
+function normalizeProgress(value){
+if(!value||typeof value!=="object"||Array.isArray(value))throw Error("Format invalide");
+const done=Array.isArray(value.done)?[...new Set(value.done.filter(n=>Number.isInteger(n)&&n>=1&&n<=TOTAL))].sort((a,b)=>a-b):[];
+const points=done.reduce((sum,n)=>sum+(n<=300?10:n<=900?15:n<=1500?20:30),0);
+return {pseudo:typeof value.pseudo==="string"?value.pseudo.slice(0,18):"",photo:typeof value.photo==="string"&&value.photo.startsWith("data:image/")&&value.photo.length<=1800000?value.photo:"",score:Number.isSafeInteger(value.score)&&value.score>=0?value.score:points,stars:Number.isSafeInteger(value.stars)&&value.stars>=0?value.stars:done.length,unlocked:Math.min(TOTAL,Math.max(1,...done.map(n=>n+1))),done,scores:[]};}
+let restoreMessage="";
+try{const old=JSON.parse(localStorage.getItem("atoj_v1")||"null");if(old)state=normalizeProgress(old)}catch(e){restoreMessage="La progression locale n’a pas pu être chargée. Tu peux importer une sauvegarde.";}
+const LEVELS_PER_PAGE=50;let levelsPage=Math.floor((state.unlocked-1)/LEVELS_PER_PAGE);
 const $=id=>document.getElementById(id);
 function save(){try{localStorage.setItem("atoj_v1",JSON.stringify(state))}catch(e){$("saveMessage").textContent="⚠️ Sauvegarde locale indisponible : exporte ta partie."}render()}
 function render(){
@@ -192,7 +206,11 @@ function render(){
  $("progressHome").style.width=(state.done.length/TOTAL*100)+"%";
  const av=$("avatarPreview");if(state.photo){av.src=state.photo;av.style.display="block"}else{av.style.display="grid";av.src="";av.alt="🧠"}
  $("levels").innerHTML="";
- for(let n=1;n<=TOTAL;n++){const b=document.createElement("button");b.className="level "+(state.done.includes(n)?"done":n<=state.unlocked?"open":"");b.textContent=state.done.includes(n)?"★ "+n:n;b.disabled=n>state.unlocked;b.onclick=()=>start(n);$("levels").appendChild(b)}
+ const first=levelsPage*LEVELS_PER_PAGE+1,last=Math.min(TOTAL,first+LEVELS_PER_PAGE-1);
+$("levelsPage").textContent="Niveaux "+first+" à "+last+" — page "+(levelsPage+1)+" / "+Math.ceil(TOTAL/LEVELS_PER_PAGE);
+$("previousLevels").disabled=levelsPage===0;$("nextLevels").disabled=last===TOTAL;
+$("resumeLevel").textContent="Reprendre au niveau "+state.unlocked;
+for(let n=first;n<=last;n++){const b=document.createElement("button");b.className="level "+(state.done.includes(n)?"done":n<=state.unlocked?"open":"");b.textContent=state.done.includes(n)?"★ "+n:n;b.setAttribute("aria-label","Niveau "+n+(state.done.includes(n)?" réussi":n<=state.unlocked?" disponible":" verrouillé"));b.disabled=n>state.unlocked;b.onclick=()=>start(n);$("levels").appendChild(b)}
  $("ranking").innerHTML=`<div class="rank"><span>🎯 Niveaux réussis</span><b>${state.done.length} / ${TOTAL}</b></div><div class="rank"><span>⭐ Étoiles gagnées</span><b>${state.stars}</b></div><div class="rank"><span>🏅 Points obtenus</span><b>${state.score}</b></div>`;
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
@@ -201,23 +219,28 @@ let current=1,answered=false,challengeTimer=null,remaining=0;
 function difficulty(n){if(n<=300)return {name:"🌱 Facile",seconds:0,points:10};if(n<=900)return {name:"⚡ Intermédiaire",seconds:0,points:15};if(n<=1500)return {name:"🔥 Difficile",seconds:0,points:20};return {name:"👑 Expert",seconds:0,points:30}}
 function stopChallenge(){}
 function startChallenge(n){const d=difficulty(n);$("difficultyLabel").textContent=`${d.name} · ${d.points} pts`;$("challengeTime").textContent="♾️ Sans chronomètre";}
-function start(n){if(n>state.unlocked)return;stopChallenge();current=n;answered=false;$("game").classList.remove("hidden");$("category").textContent=questions[n-1].category;$("levelCounter").textContent=`Niveau ${n}/${TOTAL}`;$("gameProgress").style.width=(n/TOTAL*100)+"%";$("questionTitle").textContent=questions[n-1].type;$("questionText").textContent=questions[n-1].q;$("feedback").classList.add("hidden");$("next").disabled=true;$("next").textContent=n===TOTAL?"Terminer 🏆":"Continuer →";const area=$("options");area.innerHTML="";questions[n-1].opts.forEach((o,i)=>{const b=document.createElement("button");b.textContent=o;b.onclick=()=>answer(i);area.appendChild(b)});startChallenge(n);$("game").scrollIntoView({behavior:"smooth",block:"start"})}
-function answer(i){if(answered)return;answered=true;stopChallenge();const q=questions[current-1],correct=i===q.correct;const btns=[...$("options").children];btns.forEach((b,j)=>{b.disabled=true;if(j===i)b.classList.add(correct?"correct":"wrong")});
- if(correct){if(!state.done.includes(current)){state.score+=difficulty(current).points;state.stars+=1;state.done.push(current);state.unlocked=Math.max(state.unlocked,Math.min(TOTAL,current+1));} $("feedback").innerHTML=`<b>🎉 Bravo ! +${difficulty(current).points} points.</b>`}
+function start(n){if(!Number.isInteger(n)||n<1||n>TOTAL||n>state.unlocked)return;stopChallenge();current=n;answered=false;$("game").classList.remove("hidden");$("category").textContent=questions[n-1].category;$("levelCounter").textContent=`Niveau ${n}/${TOTAL}`;$("gameProgress").style.width=(n/TOTAL*100)+"%";$("questionTitle").textContent=questions[n-1].type;$("questionText").textContent=questions[n-1].q;$("feedback").classList.add("hidden");$("next").disabled=true;$("next").textContent=n===TOTAL?"Terminer 🏆":"Continuer →";const area=$("options");area.innerHTML="";questions[n-1].opts.forEach((o,i)=>{const b=document.createElement("button");b.textContent=o;b.onclick=()=>answer(i);area.appendChild(b)});startChallenge(n);$("game").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}
+function answer(i){if(answered)return;answered=true;stopChallenge();const q=questions[current-1],correct=i===q.correct,alreadyDone=state.done.includes(current);const btns=[...$("options").children];btns.forEach((b,j)=>{b.disabled=true;if(j===i)b.classList.add(correct?"correct":"wrong")});
+ if(correct){if(!state.done.includes(current)){state.score+=difficulty(current).points;state.stars+=1;state.done.push(current);state.unlocked=Math.max(state.unlocked,Math.min(TOTAL,current+1));} $("feedback").innerHTML=alreadyDone?"<b>🎉 Bonne réponse ! Ce niveau était déjà réussi : ton score reste inchangé.</b>":`<b>🎉 Bravo ! +${difficulty(current).points} points.</b>`}
  else{$("feedback").innerHTML="<b>❌ Mauvaise réponse ! Réessaie.</b>"}
  $("feedback").classList.remove("hidden");$("next").disabled=false;$("next").textContent=correct?"Continuer →":"Réessayer ↻";save()}
 $("next").onclick=()=>{if(!state.done.includes(current)){start(current);return}if(current<TOTAL){start(Math.min(current+1,state.unlocked))}else{$("game").innerHTML="<h2>🏆 Félicitations !</h2><p>Tu as terminé les 2 000 niveaux !</p><button onclick='location.reload()'>Retour au jeu</button>"}};
-$("backHome").onclick=()=>{stopChallenge();$("game").classList.add("hidden");window.scrollTo({top:0,behavior:"smooth"})};
+$("backHome").onclick=()=>{stopChallenge();$("game").classList.add("hidden");window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})};
 // Export et import de la progression, pour changer de site sans repartir de zéro.
-$("exportSave").onclick=()=>{const data={app:"a-toi-de-jouer",version:2,exportedAt:new Date().toISOString(),state:{pseudo:state.pseudo,photo:state.photo,score:state.score,stars:state.stars,unlocked:state.unlocked,done:state.done}};const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="a-toi-de-jouer-sauvegarde.json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);$("saveMessage").textContent="Sauvegarde créée. Vérifie ton dossier Téléchargements."};
+$("exportSave").onclick=()=>{const data={app:"a-toi-de-jouer",version:3,learning:window.lotusLearning?.exportProgress()||{},exportedAt:new Date().toISOString(),state:{pseudo:state.pseudo,photo:state.photo,score:state.score,stars:state.stars,unlocked:state.unlocked,done:state.done}};const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="lotus-quiz-sauvegarde.json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);$("saveMessage").textContent="Sauvegarde créée. Vérifie ton dossier Téléchargements."};
 $("importSave").onclick=()=>$("importFile").click();
-$("importFile").onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>2500000)throw Error("Fichier trop volumineux");const data=JSON.parse(await file.text());if(data.app!=="a-toi-de-jouer"||!data.state)throw Error("Ce fichier ne correspond pas au jeu");const x=data.state;const done=Array.isArray(x.done)?[...new Set(x.done.filter(n=>Number.isInteger(n)&&n>=1&&n<=TOTAL))]:[];if(!confirm("Importer cette sauvegarde et remplacer la progression actuelle ?"))return;state={pseudo:typeof x.pseudo==="string"?x.pseudo.slice(0,18):"",photo:typeof x.photo==="string"&&x.photo.startsWith("data:image/")?x.photo:"",score:Number.isFinite(x.score)&&x.score>=0?Math.floor(x.score):done.length*10,stars:Number.isFinite(x.stars)&&x.stars>=0?Math.floor(x.stars):done.length,unlocked:Math.min(TOTAL,Math.max(1,...done.map(n=>n+1))),done,scores:[]};save();$("game").classList.add("hidden");$("saveMessage").textContent="✅ Sauvegarde importée."}catch(err){$("saveMessage").textContent="Impossible d’importer : "+err.message}e.target.value=""};
-render();
+$("importFile").onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>2500000)throw Error("Fichier trop volumineux");const data=JSON.parse(await file.text());if(data.app!=="a-toi-de-jouer"||!data.state)throw Error("Ce fichier ne correspond pas au jeu");const x=data.state;const done=Array.isArray(x.done)?[...new Set(x.done.filter(n=>Number.isInteger(n)&&n>=1&&n<=TOTAL))]:[];if(!confirm("Importer cette sauvegarde et remplacer la progression actuelle ?"))return;state=normalizeProgress(x);levelsPage=Math.floor((state.unlocked-1)/LEVELS_PER_PAGE);window.lotusLearning?.importProgress(data.learning||{});save();$("game").classList.add("hidden");$("saveMessage").textContent="✅ Sauvegarde importée."}catch(err){$("saveMessage").textContent="Impossible d’importer : "+err.message}e.target.value=""};
+$("previousLevels").onclick=()=>{if(levelsPage>0){levelsPage--;render();}};
+$("nextLevels").onclick=()=>{if((levelsPage+1)*LEVELS_PER_PAGE<TOTAL){levelsPage++;render();}};
+$("resumeLevel").onclick=()=>{levelsPage=Math.floor((state.unlocked-1)/LEVELS_PER_PAGE);render();start(state.unlocked);};
+render();if(restoreMessage)$("saveMessage").textContent=restoreMessage;
 </script>
+<script src="learning-data.js"></script>
+<script src="learning.js"></script>
 <script>
 if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));
 }
 </script>
-<footer style="text-align:center;padding:16px;font-size:12px;color:#777;">© 2026 – Défi Quiz – À toi de jouer ! – Tous droits réservés.</footer>
+<footer style="text-align:center;padding:16px;font-size:12px;color:#777;">© 2026 · LOTUS Quiz · Jouer, découvrir, apprendre.</footer>
 
