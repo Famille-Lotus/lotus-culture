@@ -1,4 +1,8 @@
-const CACHE='lotus-habitat-v1.0';const FILES=['./','./index.html','./habitat.css','./habitat-core.js','./habitat-app.js','./manifest.json','./lotus-habitat-192.png','./lotus-habitat-512.png'];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('lotus-habitat-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||!e.request.url.startsWith(self.registration.scope))return;e.respondWith((async()=>{const c=await caches.open(CACHE);try{const r=await fetch(e.request);if(r.ok){try{await c.put(e.request,r.clone());}catch{}}return r;}catch(error){const r=await c.match(e.request);if(r)return r;if(e.request.mode==='navigate'){const p=await c.match('./index.html');if(p)return p;}throw error;}})());});
+const CACHE='defi-quiz-culture-v11';
+const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./lotus-icon.svg','./learning-data.js','./random-data.js','./culture.js','./lotus-family.css','./lotus-welcome.js','./lotus-brand.svg'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('defi-quiz-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{
+ if(event.request.method!=='GET'||!event.request.url.startsWith(self.registration.scope))return;
+ event.respondWith((async()=>{const cache=await caches.open(CACHE);try{const response=await fetch(event.request);if(response.ok){try{await cache.put(event.request,response.clone());}catch{}}return response;}catch(error){const saved=await cache.match(event.request);if(saved)return saved;if(event.request.mode==='navigate'){const page=await cache.match('./index.html');if(page)return page;}throw error;}})());
+});

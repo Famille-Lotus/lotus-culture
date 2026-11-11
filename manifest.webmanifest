@@ -1,11 +1,11 @@
 {
   "name": "LOTUS Culture",
   "short_name": "LOTUS Culture",
-  "start_url": "/defi-quiz/",
-  "scope": "/defi-quiz/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#fcf8ef",
-  "theme_color": "#18574f",
+  "theme_color": "#143f32",
   "icons": [
     {
       "src": "icon-192.png",
